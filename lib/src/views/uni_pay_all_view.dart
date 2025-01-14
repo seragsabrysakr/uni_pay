@@ -19,7 +19,7 @@ class _UniPayGatewayViewState extends State<UniPayGatewayView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: UniPayDesignSystem.appBar(title: UniPayText.checkout),
+      appBar: UniPayDesignSystem.appBar(title: UniPayText.checkout),
       body: _allPaymentView(),
     );
   }
@@ -45,14 +45,16 @@ class _UniPayGatewayViewState extends State<UniPayGatewayView> {
                 30.vs,
 
                 // Moyasar View
-                CardPaymentWidget(
-                  widgetData: WidgetData(
-                    currentStatus: uniPayPaymentMethods.isCard,
-                    locale: UniPayControllers.uniPayData.locale,
-                    onChange: (s) => UniPayControllers.changePaymentMethod(
-                        UniPayPaymentMethods.card),
-                  ),
-                ),
+                if (paymentMethods.isTamaraGateway) ...[
+                  CardPaymentWidget(
+                    widgetData: WidgetData(
+                      currentStatus: uniPayPaymentMethods.isCard,
+                      locale: UniPayControllers.uniPayData.locale,
+                      onChange: (s) => UniPayControllers.changePaymentMethod(
+                          UniPayPaymentMethods.card),
+                    ),
+                  )
+                ],
 
                 // Tamara View
                 if (paymentMethods.isTamaraGateway) ...[

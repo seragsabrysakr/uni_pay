@@ -8,6 +8,7 @@ import '../../views/widgets/payment_result_view.dart';
 
 class UniPayControllers {
   UniPayControllers._();
+
   static late BuildContext context;
 
   /// Here the payement related data will be stored
@@ -37,6 +38,7 @@ class UniPayControllers {
 
   ///* Tamara checkout data
   static TamaraCheckoutData tamaraCheckout = TamaraCheckoutData();
+
   static Future<TamaraCheckoutData?> initTamaraPay() async {
     tamaraNotifier.value = UniPayCurrentState.loading;
 
@@ -69,7 +71,7 @@ class UniPayControllers {
       await Future.delayed(const Duration(seconds: 2));
 
       /// Pop the payment result view and go back to the previous screen
-      UniPayControllers.context.uniParentPop();
+      UniPayControllers.context.uniPop();
     }
 
     //* Success
@@ -85,6 +87,7 @@ class UniPayControllers {
   ///* Payment Methods
   static ValueNotifier<UniPayPaymentMethods> uniPayPaymentMethods =
       ValueNotifier(UniPayPaymentMethods.notSpecified);
+
   static void changePaymentMethod(UniPayPaymentMethods paymentMethod) {
     if (uniPayPaymentMethods.value != paymentMethod) {
       uniPayPaymentMethods.value = paymentMethod;
@@ -99,6 +102,7 @@ class UniPayControllers {
 
   ///* Tamara checkout data
   static TabbySessionData? tabbySession;
+
   static Future<TabbySessionData?> initTabbyCheckoutSession() async {
     tabbyNotifier.value = UniPayCurrentState.loading;
 
