@@ -37,7 +37,8 @@ dependencies:
   lottie: ^3.1.2
 
   #* Tabby payment gateway
-  tabby_flutter_inapp_sdk: ^1.4.0
+  tabby_flutter_inapp_sdk:
+    git: https://github.com/seragsabrysakr/tabby_flutter_inapp_sdk.git
 
   #* Webview
   flutter_inappwebview: ^6.1.5

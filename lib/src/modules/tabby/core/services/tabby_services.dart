@@ -53,6 +53,7 @@ class UniTabbyServices {
       textColor: tabbySnippet.textColor,
       backgroundColor: tabbySnippet.backgroundColor,
       borderColor: tabbySnippet.borderColor,
+      textStyle:tabbySnippet.style ,
     );
   }
 
@@ -62,6 +63,7 @@ class UniTabbyServices {
       price: tabbySnippet.totalAmountWithVat.formattedString,
       currency: tabbySnippet.currency.tabbyCurrency,
       lang: tabbySnippet.locale.tabbyLang,
+      textStyle:tabbySnippet.style ,
     );
   }
 
