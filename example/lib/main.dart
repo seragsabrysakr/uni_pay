@@ -38,6 +38,7 @@ class _PaymentViewState extends State<PaymentView> {
     return UniPay(
       context: context,
       uniPayData: uniPayData,
+
     );
     // return _applePayOnlyView();
   }

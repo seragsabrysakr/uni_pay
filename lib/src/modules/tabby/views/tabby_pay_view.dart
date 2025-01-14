@@ -12,8 +12,8 @@ class UniPayTabby extends StatefulWidget {
   /// If you wish to use it as a standalone view,
   ///
   /// then kindly call `UniPayServices.initUniPay()` first before using this widget.
-
-  const UniPayTabby({Key? key}) : super(key: key);
+  final Widget? leading;
+  const UniPayTabby({Key? key, this.leading}) : super(key: key);
 
   @override
   State<UniPayTabby> createState() => _UniPayTabbyState();
@@ -29,7 +29,7 @@ class _UniPayTabbyState extends State<UniPayTabby> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: UniPayDesignSystem.appBar(title: UniPayText.checkoutByTabby),
+      appBar: UniPayDesignSystem.appBar(title: UniPayText.checkoutByTabby,leading: widget.leading),
       body: ValueListenableBuilder(
         valueListenable: UniPayControllers.tabbyNotifier,
         builder: (_, status, __) {

@@ -9,7 +9,8 @@ import '../../applepay/uni_apple_pay.dart';
 import '../core/services/uni_moyasar.dart';
 
 class UniPayCard extends StatefulWidget {
-  const UniPayCard({Key? key}) : super(key: key);
+  final Widget? leading;
+  const UniPayCard({Key? key, this.leading}) : super(key: key);
 
   @override
   State<UniPayCard> createState() => _UniPayCardState();
@@ -19,7 +20,7 @@ class _UniPayCardState extends State<UniPayCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: UniPayDesignSystem.appBar(title: UniPayText.payWithCard),
+      appBar: UniPayDesignSystem.appBar(title: UniPayText.payWithCard,leading: widget.leading),
       body: ListView(
         padding: EdgeInsets.all(20.rSp),
         children: [

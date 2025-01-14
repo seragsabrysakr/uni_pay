@@ -10,7 +10,8 @@ import '../design_system.dart';
 import '../uni_pay_all_view.dart';
 
 class UniPayViewHandler extends StatefulWidget {
-  const UniPayViewHandler({Key? key}) : super(key: key);
+  final Widget? leading;
+  const UniPayViewHandler({Key? key,   this.leading}) : super(key: key);
 
   @override
   State<UniPayViewHandler> createState() => _UniPayViewHandlerState();
@@ -42,23 +43,23 @@ class _UniPayViewHandlerState extends State<UniPayViewHandler> {
 
     // Case 1:  Tamara checkout
     if (isSingleGatewayPayment && paymentMethods.first.isTamara) {
-      context.uniPushReplacement(const UniPayTamara());
+      context.uniPushReplacement(  UniPayTamara(leading: widget.leading,));
     }
 
     // Case 2:  Tabby checkout
     else if (isSingleGatewayPayment && paymentMethods.first.isTabby) {
-      context.uniPushReplacement(const UniPayTabby());
+      context.uniPushReplacement(  UniPayTabby(leading: widget.leading,));
     }
     // Case 3: Moyasar checkout
     else if ((isSingleGatewayPayment && paymentMethods.first.isMoyasar) ||
         (paymentMethods.length == 2 &&
             !paymentMethods.isTamaraGateway &&
             !paymentMethods.isTabbyGateway)) {
-      context.uniPushReplacement(const UniPayCard());
+      context.uniPushReplacement(  UniPayCard(leading: widget.leading,));
     }
     // Case 4: All payment methods
     else {
-      context.uniPushReplacement(const UniPayGatewayView());
+      context.uniPushReplacement(  UniPayGatewayView(leading: widget.leading,));
     }
   }
 }

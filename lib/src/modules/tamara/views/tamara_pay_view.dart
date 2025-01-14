@@ -13,8 +13,8 @@ class UniPayTamara extends StatefulWidget {
   /// If you wish to use it as a standalone view,
   ///
   /// then kindly call `UniPayServices.initUniPay()` first before using this widget.
-
-  const UniPayTamara({Key? key}) : super(key: key);
+  final Widget? leading;
+  const UniPayTamara({Key? key, this.leading}) : super(key: key);
 
   @override
   State<UniPayTamara> createState() => _UniPayTamaraState();
@@ -30,7 +30,7 @@ class _UniPayTamaraState extends State<UniPayTamara> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: UniPayDesignSystem.appBar(title: UniPayText.checkoutByTamara),
+      appBar: UniPayDesignSystem.appBar(title: UniPayText.checkoutByTamara,leading: widget.leading),
       body: ValueListenableBuilder(
         valueListenable: UniPayControllers.tamaraNotifier,
         builder: (_, status, __) {

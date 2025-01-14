@@ -9,7 +9,9 @@ import '../core/controllers/uni_pay_controller.dart';
 import 'design_system.dart';
 
 class UniPayGatewayView extends StatefulWidget {
-  const UniPayGatewayView({Key? key}) : super(key: key);
+  final Widget? leading;
+
+  const UniPayGatewayView({Key? key,   this.leading}) : super(key: key);
 
   @override
   State<UniPayGatewayView> createState() => _UniPayGatewayViewState();
@@ -19,7 +21,7 @@ class _UniPayGatewayViewState extends State<UniPayGatewayView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: UniPayDesignSystem.appBar(title: UniPayText.checkout),
+      appBar: UniPayDesignSystem.appBar(title: UniPayText.checkout,leading: widget.leading),
       body: _allPaymentView(),
     );
   }
