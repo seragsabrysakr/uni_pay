@@ -20,7 +20,8 @@ class UniTamara {
 
   ///* Generate checkout urls for tamara
   static Future<TamaraCheckoutData> generateTamaraCheckoutUrls(
-      UniPayData uniPayData) async {
+      UniPayData uniPayData) async
+  {
     final order = uniPayData.orderInfo;
     final customer = uniPayData.customerInfo;
     TamaraData tamaraData = TamaraData(
@@ -77,7 +78,8 @@ class UniTamara {
 
   ///* Call tamara checkout
   static Future<TamaraCheckoutData> tamaraCheckout(
-      TamaraData tamaraData, UniPayData uniPayData) async {
+      TamaraData tamaraData, UniPayData uniPayData) async
+  {
     TamaraCheckoutData checkout = TamaraCheckoutData();
     try {
       String data = jsonEncode(tamaraData.toJson());

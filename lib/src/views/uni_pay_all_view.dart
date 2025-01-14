@@ -19,7 +19,7 @@ class _UniPayGatewayViewState extends State<UniPayGatewayView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: UniPayDesignSystem.appBar(title: UniPayText.checkout),
+      // appBar: UniPayDesignSystem.appBar(title: UniPayText.checkout),
       body: _allPaymentView(),
     );
   }
