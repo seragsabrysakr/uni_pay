@@ -45,7 +45,7 @@ class _UniPayGatewayViewState extends State<UniPayGatewayView> {
                 30.vs,
 
                 // Moyasar View
-                if (paymentMethods.isTamaraGateway) ...[
+                if (paymentMethods.isMoyasarGateway) ...[
                   CardPaymentWidget(
                     widgetData: WidgetData(
                       currentStatus: uniPayPaymentMethods.isCard,
