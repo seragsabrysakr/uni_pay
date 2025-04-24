@@ -53,7 +53,7 @@ class UniTabbyServices {
       textColor: tabbySnippet.textColor,
       backgroundColor: tabbySnippet.backgroundColor,
       borderColor: tabbySnippet.borderColor,
-      textStyle:tabbySnippet.style ,
+      textStyle: tabbySnippet.style,
     );
   }
 
@@ -63,7 +63,7 @@ class UniTabbyServices {
       price: tabbySnippet.totalAmountWithVat.formattedString,
       currency: tabbySnippet.currency.tabbyCurrency,
       lang: tabbySnippet.locale.tabbyLang,
-      textStyle:tabbySnippet.style ,
+      textStyle: tabbySnippet.style,
     );
   }
 
@@ -136,6 +136,7 @@ class UniTabbyServices {
         sessionId: sessionResult.sessionId,
         paymentId: sessionResult.paymentId,
         availableProducts: sessionResult.availableProducts,
+        status: sessionResult.status,
       );
       uniLog("✔ Tabby Session: ${session.toString()}");
       return session;

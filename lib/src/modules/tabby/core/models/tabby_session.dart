@@ -5,6 +5,7 @@ class TabbySessionData extends TabbySession {
     required super.sessionId,
     required super.paymentId,
     required super.availableProducts,
+    required super.status,
   });
 
   Map<String, dynamic> toJson() {
