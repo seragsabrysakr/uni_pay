@@ -4,7 +4,6 @@ import 'package:uni_pay/src/modules/tamara/core/models/tamara_callback.dart';
 import 'package:uni_pay/src/views/design_system.dart';
 import 'package:uni_pay/uni_pay.dart';
 
-import '../../../../core/keys/api_keys.dart';
 import '../../../../utils/utils.dart';
 import '../../core/models/tamara_urls.dart';
 
@@ -38,7 +37,22 @@ class _TamaraCheckoutViewState extends State<TamaraCheckoutView> {
         children: [
           InAppWebView(
             key: _viewKey,
-            initialOptions: ApiKeys.webViewGroupOptions,
+            initialSettings: InAppWebViewSettings(
+              javaScriptEnabled: true,
+              javaScriptCanOpenWindowsAutomatically: true,
+              useHybridComposition: true, // Important for Android
+              domStorageEnabled: true,
+              supportZoom: false,
+              mediaPlaybackRequiresUserGesture: false,
+              allowsInlineMediaPlayback: true,
+            ),
+            onConsoleMessage: (controller, consoleMessage) {
+              print("Console: ${consoleMessage.message}");
+            },
+            onLoadStop: (controller, url) async {
+              print("Page loaded: $url");
+            },
+            // initialOptions: ApiKeys.webViewGroupOptions,
             initialUrlRequest: URLRequest(url: WebUri(tamaraUrls.checkoutUrl)),
             shouldOverrideUrlLoading: (controller, action) async {
               inAppViewController = controller;
