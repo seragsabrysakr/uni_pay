@@ -69,8 +69,8 @@ enum UniPayLocale {
         return "ar_SA";
       case UniPayLocale.en:
         return "en_US";
-      default:
-        return "en_US";
+      // default:
+      //   return "en_US";
     }
   }
 
