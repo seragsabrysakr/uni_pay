@@ -41,7 +41,7 @@ dependencies:
     git: https://github.com/seragsabrysakr/tabby_flutter_inapp_sdk.git
 
   #* Webview
-  flutter_inappwebview: ^6.1.5
+#  flutter_inappwebview: ^6.1.5
 
 dev_dependencies:
   flutter_test:
