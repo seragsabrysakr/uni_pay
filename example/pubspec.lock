@@ -415,7 +415,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: b157f930fabb7cd10dacfd9ce7b108a40d0863ae
+      resolved-ref: "4a19d72027d1a2ddd77a5abb71de057763fee04c"
       url: "https://github.com/seragsabrysakr/tabby_flutter_inapp_sdk.git"
     source: git
     version: "1.8.1"
@@ -449,7 +449,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "3.0.2"
+    version: "3.0.3"
   uuid:
     dependency: transitive
     description:
